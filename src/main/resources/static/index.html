@@ -13,8 +13,10 @@
         <script>
             const url = "http://localhost:8080/POST";
             function post() {
-                let genID = Math.floor(Math.random() * 500);
-                let dataText = {"id": genID, "name": "Nopal", "birthdate": "2002-12-29"};
+                let genID = document.getElementById("myid").value;
+                let name = document.getElementById("name").value;
+                let date = document.getElementById("birthdate").value;
+                let dataText = {"id": genID, "name": name , "birthdate": date};
                 let dataJson = JSON.stringify(dataText);
                 $.ajax({
                     url: url,
